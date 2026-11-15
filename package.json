@@ -1,0 +1,8 @@
+{
+  "name": "token-radar-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A pre-token launch radar over the sealed DefiLlama snapshot: implied value, confidence band, signal and farm plans.",
+  "license": "MIT"
+}
