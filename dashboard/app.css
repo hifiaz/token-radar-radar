@@ -103,7 +103,7 @@ button { cursor: pointer; }
   align-items: center;
   justify-content: space-between;
   gap: var(--s5);
-  padding: var(--s4) 0;
+  padding: var(--s2) 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -193,7 +193,7 @@ button { cursor: pointer; }
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
   gap: var(--s7);
   align-items: end;
-  padding: var(--s6) 0 var(--s5);
+  padding: var(--s5) 0 var(--s4);
 }
 
 .eyebrow {
@@ -215,7 +215,7 @@ button { cursor: pointer; }
 }
 
 .hero h1 {
-  font-size: clamp(32px, 3.4vw, 46px);
+  font-size: clamp(26px, 2.5vw, 32px);
   line-height: 1.05;
   font-weight: 620;
   letter-spacing: -0.035em;
@@ -223,20 +223,20 @@ button { cursor: pointer; }
 .hero h1 em { font-style: normal; color: var(--amber); }
 
 .hero-lede {
-  margin-top: var(--s3);
-  max-width: 68ch;
+  margin-top: var(--s2);
+  max-width: 62ch;
   color: var(--muted);
-  font-size: 14.5px;
+  font-size: 13.5px;
 }
 
 .model-note {
   display: flex;
   align-items: baseline;
   gap: var(--s2);
-  margin-top: var(--s4);
+  margin-top: var(--s3);
   padding-left: var(--s3);
   border-left: 2px solid var(--line);
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 .model-note b { color: var(--text); font-weight: 550; }
@@ -252,7 +252,7 @@ button { cursor: pointer; }
   background: linear-gradient(180deg, rgba(16, 23, 34, 0.9), rgba(12, 17, 25, 0.65));
 }
 .stat {
-  padding: var(--s3) var(--s4);
+  padding: var(--s2) var(--s4);
   border-left: 1px solid var(--line-soft);
   min-width: 0;
 }
@@ -278,7 +278,7 @@ button { cursor: pointer; }
   row-gap: 2px;
   margin-top: var(--s1);
   font-family: var(--mono);
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -295,41 +295,41 @@ button { cursor: pointer; }
   display: flex;
   flex-wrap: wrap;
   align-items: end;
-  gap: var(--s3);
-  padding: var(--s4) 0;
+  gap: var(--s2) var(--s3);
+  padding: var(--s3) 0;
 }
 
 .field { display: grid; gap: var(--s1); }
 .field > label, .field > span {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--faint);
 }
 .field input, .field select {
-  height: 38px;
+  height: 34px;
   padding: 0 var(--s3);
   border: 1px solid var(--line);
   border-radius: var(--r1);
   background: var(--ink);
   color: var(--text);
-  min-width: 150px;
+  min-width: 132px;
 }
-.field input { min-width: 250px; }
+.field input { min-width: 212px; }
 .field input::placeholder { color: var(--faint); }
 .field input:hover, .field select:hover { border-color: #2a3a4f; }
 
 .tabs {
   display: inline-flex;
   gap: 2px;
-  padding: 3px;
+  padding: 2px;
   border: 1px solid var(--line);
   border-radius: var(--r1);
   background: var(--ink);
 }
 .tabs button {
-  height: 32px;
+  height: 30px;
   padding: 0 var(--s3);
   border: 0;
   border-radius: 4px;
@@ -351,7 +351,7 @@ button { cursor: pointer; }
 }
 .count b { color: var(--text); font-weight: 500; }
 .clear {
-  height: 38px;
+  height: 34px;
   padding: 0 var(--s3);
   border: 1px solid var(--line);
   border-radius: var(--r1);
@@ -380,13 +380,13 @@ table {
 caption {
   caption-side: top;
   text-align: left;
-  padding: var(--s3) var(--s4);
+  padding: var(--s2) var(--s4);
   border-bottom: 1px solid var(--line-soft);
   color: var(--faint);
   font-size: 12px;
 }
 th, td {
-  padding: var(--s3) var(--s3);
+  padding: 7px var(--s3);
   text-align: left;
   vertical-align: middle;
   border-bottom: 1px solid var(--line-soft);
@@ -445,11 +445,11 @@ tbody tr:last-child td { border-bottom: 0; }
   box-shadow: 0 0 0 2px rgba(244, 182, 79, 0.16);
   flex: none;
 }
-.name { display: grid; gap: 2px; min-width: 180px; }
+.name { display: grid; gap: 1px; min-width: 180px; }
 .name b { font-weight: 550; color: var(--text); }
 .name span {
   color: var(--faint);
-  font-size: 11.5px;
+  font-size: 10.5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -624,13 +624,13 @@ tbody tr:last-child td { border-bottom: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-.drawer-inner { padding: var(--s5) var(--s5) var(--s6); }
+.drawer-inner { padding: var(--s4) var(--s5) var(--s5); }
 .drawer-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--s4);
-  padding-bottom: var(--s4);
+  padding-bottom: var(--s3);
   border-bottom: 1px solid var(--line);
 }
 .drawer-head > div { min-width: 0; }
@@ -646,7 +646,7 @@ tbody tr:last-child td { border-bottom: 0; }
 }
 .drawer-head h2 {
   margin-top: var(--s1);
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
@@ -687,12 +687,12 @@ tbody tr:last-child td { border-bottom: 0; }
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   gap: var(--s4);
-  padding: var(--s3) 0;
+  padding: var(--s3) 0 var(--s2);
   border-bottom: 1px solid var(--line);
 }
 .big-number {
   font-family: var(--mono);
-  font-size: 34px;
+  font-size: 30px;
   line-height: 1;
   font-weight: 500;
   letter-spacing: -0.03em;
@@ -721,8 +721,8 @@ tbody tr:last-child td { border-bottom: 0; }
 .band .mid b { color: var(--amber); }
 
 .placement-wrap {
-  margin-top: var(--s3);
-  padding: var(--s3);
+  margin-top: var(--s2);
+  padding: var(--s2);
   border: 1px solid var(--line-soft);
   border-radius: var(--r2);
   background: var(--ink-2);
@@ -735,17 +735,16 @@ tbody tr:last-child td { border-bottom: 0; }
 .placement span { font-size: 11px; color: var(--faint); }
 .placement b {
   display: block;
-  margin-top: 2px;
+  margin-top: 1px;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--text);
   font-variant-numeric: tabular-nums;
 }
-.placement-note { margin-top: var(--s2); font-size: 11.5px; color: var(--muted); }
 
 .drawer h3 {
-  margin: var(--s4) 0 var(--s2);
+  margin: var(--s3) 0 var(--s2);
   font-family: var(--mono);
   font-size: 10.5px;
   font-weight: 500;
@@ -754,13 +753,13 @@ tbody tr:last-child td { border-bottom: 0; }
   color: var(--faint);
 }
 
-.equation { display: grid; gap: 0; font-size: 13px; }
+.equation { display: grid; gap: 0; font-size: 12.5px; }
 .equation div {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--s4);
-  padding: 6px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--line-soft);
 }
 .equation div:last-child { border-bottom: 0; }
@@ -772,8 +771,6 @@ tbody tr:last-child td { border-bottom: 0; }
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-.equation .result { margin-top: var(--s1); border-top: 1px solid var(--line); }
-.equation .result b { color: var(--amber); font-size: 15px; }
 
 .signal-detail { display: grid; gap: var(--s2); }
 .sig-row {
@@ -803,21 +800,21 @@ tbody tr:last-child td { border-bottom: 0; }
 .plan li {
   counter-increment: step;
   position: relative;
-  padding: 0 0 var(--s3) var(--s6);
-  margin-bottom: var(--s3);
+  padding: 0 0 var(--s2) var(--s6);
+  margin-bottom: var(--s2);
   border-left: 1px solid var(--line);
   margin-left: 9px;
   color: var(--muted);
   font-size: 12.5px;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 .plan li::before {
   content: counter(step);
   position: absolute;
   left: -10px;
-  top: -2px;
-  width: 19px;
-  height: 19px;
+  top: -1px;
+  width: 18px;
+  height: 18px;
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
@@ -833,7 +830,7 @@ tbody tr:last-child td { border-bottom: 0; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--s1) var(--s3);
-  margin-top: var(--s1);
+  margin-top: 2px;
   font-family: var(--mono);
   font-size: 10.5px;
   color: var(--faint);
@@ -841,15 +838,15 @@ tbody tr:last-child td { border-bottom: 0; }
 .plan .cost b { color: var(--cyan); font-weight: 500; }
 
 .provenance {
-  margin-top: var(--s5);
-  padding: var(--s3);
+  margin-top: var(--s4);
+  padding: var(--s2) var(--s3);
   border: 1px solid var(--line-soft);
   border-radius: var(--r1);
   background: var(--void);
   color: var(--faint);
   font-family: var(--mono);
   font-size: 10.5px;
-  line-height: 1.7;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
 .provenance b { color: var(--muted); font-weight: 500; }

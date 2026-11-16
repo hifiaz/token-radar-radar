@@ -1,5 +1,9 @@
 # Radar — a pre-token launch board
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/hifiaz/token-radar-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/hifiaz/token-radar-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+
 Every protocol in this DefiLlama snapshot that records no token, ranked by what its own record
 implies a token could be worth. One arithmetic model, no name list, no outside data. The page is
 rendered offline from a single `data.js`; it makes no network request of its own.
@@ -94,4 +98,4 @@ The snapshot is a sealed DefiLlama protocol index (`as_of` 2026-11-14). Absence 
 record is not proof that none exists, so the page says a protocol *records no token*. An implied value
 is the model's reading of a record — not a price, not a forecast, and not make.fun's figure.
 
-MIT licensed.
+Built for [make.fun](https://make.fun)'s token-radar-01 bounty. MIT licensed.

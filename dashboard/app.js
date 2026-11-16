@@ -285,8 +285,7 @@
         el('h1', null, 'Find the launch ', el('em', { text: 'before' }), ' the ticker.'),
         el('p', { class: 'hero-lede' },
           'Every protocol in this snapshot that records no token, ranked by what its own record implies a token could be worth. ' +
-          'The board covers all ' + DATA.stats.watchlist_total + ' watchlist protocols and reaches ' + DATA.stats.below_floor + ' protocols below the $' + Math.round(DATA.floor_usd / 1e6) + 'M floor. ' +
-          'Each row carries a confidence band, a signal score and a numbered farm plan with its cost and time.'
+          'The board covers all ' + DATA.stats.watchlist_total + ' watchlist protocols and reaches ' + DATA.stats.below_floor + ' protocols below the $' + Math.round(DATA.floor_usd / 1e6) + 'M floor — each row carries a confidence band, a signal score and a numbered farm plan with its cost and time.'
         ),
         el('p', { class: 'model-note' },
           el('b', { text: 'One model, no name list.' }),
@@ -378,7 +377,6 @@
       onclick: function () { switchTab('live'); }
     });
 
-    var count = el('span', { class: 'count', id: 'count', 'aria-live': 'polite' });
     var clear = el('button', {
       class: 'clear',
       type: 'button',
@@ -394,7 +392,7 @@
       }
     });
 
-    controls = { search: search, category: category, chain: chain, min: min, preTab: preTab, liveTab: liveTab, count: count };
+    controls = { search: search, category: category, chain: chain, min: min, preTab: preTab, liveTab: liveTab };
 
     return el('section', { class: 'toolbar', 'aria-label': 'Board controls' },
       el('div', { class: 'field' }, el('label', { for: 'q', text: 'Search' }), search),
@@ -403,7 +401,6 @@
       el('div', { class: 'field' }, el('label', { for: 'min', text: 'Min TVL' }), min),
       el('div', { class: 'field' }, el('span', { text: 'Token status' }), el('div', { class: 'tabs' }, preTab, liveTab)),
       el('div', { class: 'toolbar-spacer' }),
-      count,
       clear
     );
   }
@@ -576,25 +573,18 @@
     var columns = state.tab === 'pre' ? PRE_COLUMNS : LIVE_COLUMNS;
     var total = state.tab === 'pre' ? DATA.rows.length : DATA.live.length;
 
-    if (controls.count) {
-      controls.count.textContent = '';
-      controls.count.appendChild(document.createTextNode('Showing '));
-      controls.count.appendChild(el('b', { text: String(rows.length) }));
-      controls.count.appendChild(document.createTextNode(' of ' + total + (state.tab === 'pre' ? ' pre-token' : ' live-token') + ' protocols'));
-    }
-
     host.textContent = '';
     if (rows.length === 0) {
       host.appendChild(el('div', { class: 'panel' }, emptyState()));
       return;
     }
 
+    var caption = state.tab === 'pre'
+      ? 'Showing ' + rows.length + ' of ' + total + ' pre-token protocols, ranked by implied value. Select a row for the model arithmetic and its farm plan.'
+      : 'Token live: these protocols already record a token. Their market cap is a fact from the snapshot, so the ranked board never assigns them an implied value.';
+
     var table = el('table', null,
-      el('caption', {
-        text: state.tab === 'pre'
-          ? 'Pre-token protocols, ranked by implied value. Select a row for the model arithmetic and its farm plan.'
-          : 'Token live: these protocols already record a token. Their market cap is a fact from the snapshot, so the ranked board never assigns them an implied value.'
-      }),
+      el('caption', { text: caption }),
       el('thead', null, el('tr', null, columns.map(headerCell))),
       el('tbody', null, rows.map(state.tab === 'pre' ? preRow : liveRow))
     );
@@ -712,10 +702,9 @@
         eqRow('Base', moneyFull(row.base_usd)),
         eqRow('Seven-day growth', growth),
         eqRow('Age on record', ageText(row.age_days) + ' → maturity ×' + row.maturity_multiplier),
-        eqRow('Band', '±' + Math.round(row.confidence * 1000) / 10 + '%'),
-        el('div', { class: 'result' }, el('span', { text: 'Implied value' }), el('b', { text: moneyFull(row.implied_value_usd) }))
+        eqRow('Band', '±' + Math.round(row.confidence * 1000) / 10 + '%')
       ),
-      el('p', { class: 'drawer-sub', text: 'The same function scores every protocol; no name is special-cased. The band widens for young protocols and for a missing seven-day figure.' }),
+      el('p', { class: 'drawer-sub', text: 'The same function scores every protocol; no name is special-cased. The band widens for young protocols and a missing seven-day figure.' }),
       placementBlock(row),
       el('h3', { text: 'Farm plan · ' + row.farm_steps.length + ' steps' }),
       el('ol', { class: 'plan' }, steps),
